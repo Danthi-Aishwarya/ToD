@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = (env, argv) => {
   const isDevelopment = argv.mode === "development";
 
@@ -10,6 +11,7 @@ module.exports = (env, argv) => {
       filename: "bundle.js",
       path: path.resolve(__dirname, "dist"),
       clean: true,
+      publicPath: "/",
     },
     devtool: isDevelopment ? "inline-source-map" : false,
     devServer: isDevelopment
